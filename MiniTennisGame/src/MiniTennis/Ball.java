@@ -21,11 +21,11 @@ public class Ball {
 		if (x + xa < 0) // limit border canvasnya
 			xa = game.speed;
 		else if (x + xa > game.getWidth() - DIAMETER)
-			xa = -game.speed;
+			xa = -game.speed; // bola bergerak ke kiri
 		else if (y + ya < 0)
 			ya = game.speed;
 		else if (y + ya > game.getHeight() - DIAMETER)
-			game.gameOver();
+			game.gameOver(); // jika bola menyentuh bagian bawah windowsnya, maka gameover
 		else if (collision()){
 			ya = -game.speed;
 			y = game.racquet.getTopY() - DIAMETER;
