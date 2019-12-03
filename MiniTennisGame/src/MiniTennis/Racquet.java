@@ -5,7 +5,7 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 public class Racquet {
-	private static final int Y = 730;
+	private static final int Y = 730;// jarak balok dari dinding atas
 	private static final int WITH = 130;
 	private static final int HEIGHT = 10;
 	int x = 0;
