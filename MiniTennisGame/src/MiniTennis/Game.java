@@ -73,7 +73,7 @@ public class Game extends JPanel {
 		JFrame frame = new JFrame("Mini Tennis");
 		Game game = new Game();
 		frame.add(game);
-		frame.setSize(700, 800);
+		frame.setSize(500, 500);
 		frame.setVisible(true); // supaya windownya muncul
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // supaya programnya berhenti saat window ditutup
 
