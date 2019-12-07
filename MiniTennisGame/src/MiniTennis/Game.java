@@ -16,10 +16,12 @@ public class Game extends JPanel {
 
 	Ball ball = new Ball(this);
 	Racquet racquet = new Racquet(this);
-	int speed = 1;
+	int speed = 2;
+	int score = 0;
 
 	private int getScore() {
-		return speed - 1;
+		return score ;
+		//return speed - 1;
 	}
 
 	public Game() {

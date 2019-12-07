@@ -30,6 +30,7 @@ public class Ball {
 			ya = -game.speed;
 			y = game.racquet.getTopY() - DIAMETER;
 			game.speed++;
+			game.score++;
 		} else 
 			changeDirection = false;
 		
