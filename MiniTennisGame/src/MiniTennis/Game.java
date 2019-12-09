@@ -20,7 +20,7 @@ public class Game extends JPanel {
 	int score = 0;
 	//private Menu menu;
 	
-	private Menu menu = new Menu();
+	private Menu menu = new Menu( this);
 	
 	private int getScore() {
 		return score ;
