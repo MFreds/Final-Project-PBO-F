@@ -96,7 +96,7 @@ public class Game extends JPanel {
 		Game game = new Game();
 		
 		frame.add(game);
-		frame.setSize(800,900);
+		frame.setSize(700,800);
 		frame.setVisible(true); // supaya windownya muncul
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // supaya programnya berhenti saat window ditutup
 
