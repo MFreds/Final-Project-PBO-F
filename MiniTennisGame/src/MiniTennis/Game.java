@@ -20,7 +20,7 @@ public class Game extends JPanel {
 	int score = 0;
 	//private Menu menu;
 	
-	private Menu menu = new Menu();
+	private Menu menu = new Menu( this);
 	
 	private int getScore() {
 		return score ;
@@ -97,6 +97,7 @@ public class Game extends JPanel {
 		
 		frame.add(game);
 		frame.setSize(700,800);
+		frame.setResizable(false);
 		frame.setVisible(true); // supaya windownya muncul
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // supaya programnya berhenti saat window ditutup
 

@@ -10,14 +10,19 @@ public class Menu {
 	
 	public Rectangle playButton = new Rectangle(280,250,100,50);
 	public Rectangle quitButton = new Rectangle(280,350,100,50);
-	
+	private Game game;
+
+	public Menu(Game game) {
+		this.game = game;
+	}
+
 	public void render(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		
 		Font fnt0 = new Font("calibri",Font.BOLD, 100);
 		g.setFont(fnt0);
 		g.setColor(Color.BLACK);
-		g.drawString("MINI TENNIS",60, 100);
+		g.drawString("MINI TENNIS",game.getWidth()/10, 100);
 		
 		Font fnt1 = new Font("arial", Font.BOLD, 30);
 		g.setFont(fnt1);
