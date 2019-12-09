@@ -22,7 +22,7 @@ public class Menu {
 		Font fnt0 = new Font("calibri",Font.BOLD, 100);
 		g.setFont(fnt0);
 		g.setColor(Color.BLACK);
-		g.drawString("MINI TENNIS",game.getWidth()/2, 100);
+		g.drawString("MINI TENNIS",game.getWidth()/10, 100);
 		
 		Font fnt1 = new Font("arial", Font.BOLD, 30);
 		g.setFont(fnt1);
