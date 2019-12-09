@@ -34,7 +34,7 @@ public class MouseInput implements MouseListener{
 	public Rectangle quitButton = new Rectangle(320,350,100,50);*/
 		if(Game.State == Game.STATE.MENU) {
 			//Play Button
-			if(mx >= 320 && mx <= 420) {
+			if(mx >= 280 && mx <= 380) {
 				if(my >= 250 && my <= 300) {
 					//Pressed Play Button
 					Game.State = Game.STATE.GAME;
@@ -42,7 +42,7 @@ public class MouseInput implements MouseListener{
 				}
 			}
 			//Quit Button
-			if(mx >= 320 && mx <= 420) {
+			if(mx >= 280 && mx <= 380) {
 				if(my >= 350 && my <= 400) {
 					//Pressed Quit Button
 					System.exit(1);
