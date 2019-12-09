@@ -16,13 +16,26 @@ public class Game extends JPanel {
 
 	Ball ball = new Ball(this);
 	Racquet racquet = new Racquet(this);
-	int speed = 1;
-
+	int speed = 2;
+	int score = 0;
+	//private Menu menu;
+	
+	private Menu menu = new Menu();
+	
 	private int getScore() {
-		return speed - 1;
+		return score ;
+		//return speed - 1;
 	}
 
+	public static  enum STATE{
+		MENU,GAME
+	};
+	
+	public static STATE State = STATE.MENU;
+	
 	public Game() {
+		this.addMouseListener(new MouseInput());
+		//if(State == STATE.GAME) {
 		addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -39,18 +52,23 @@ public class Game extends JPanel {
 			}
 		});
 		setFocusable(true);
-		Sound.BACK.loop();
+		if(State == STATE.GAME) {
+			Sound.BACK.loop();
+		}
+		//}
 	}
-
 	private void move() {
+		if(State == STATE.GAME) {
 		ball.move();
 		racquet.move();
 	}
+}
 
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g); // supaya bolanya tetep jadi bola
 		Graphics2D g2d = (Graphics2D) g;
+		if(State == STATE.GAME) {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON); // memperhalus bentuk bola
 		ball.paint(g2d);
@@ -59,6 +77,10 @@ public class Game extends JPanel {
 		g2d.setColor(Color.BLUE);
 		g2d.setFont(new Font("Verdana", Font.BOLD, 30));
 		g2d.drawString(String.valueOf(getScore()), 10, 30);
+		}
+		else if(State == STATE.MENU) {
+			menu.render(g2d);
+		}
 	}
 
 	public void gameOver() {
@@ -72,8 +94,9 @@ public class Game extends JPanel {
 	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new JFrame("Mini Tennis");
 		Game game = new Game();
+		
 		frame.add(game);
-		frame.setSize(500, 500);
+		frame.setSize(800,900);
 		frame.setVisible(true); // supaya windownya muncul
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // supaya programnya berhenti saat window ditutup
 

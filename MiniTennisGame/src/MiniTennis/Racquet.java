@@ -31,9 +31,11 @@ public class Racquet {
 
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_LEFT)
-			xa = -game.speed;
+			xa = -5;
+			//xa = -game.speed;
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
-			xa = game.speed;
+			xa = 5;
+			//xa = game.speed;
 	}
 
 	public Rectangle getBounds() {
