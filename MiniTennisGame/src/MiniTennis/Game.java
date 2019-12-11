@@ -21,7 +21,7 @@ public class Game extends JPanel {
 
 	Ball ball = new Ball(this);
 	Racquet racquet = new Racquet(this);
-	int speed = 5;
+	int speed = 3;
 	int score = 0;
 	
 	private Menu menu = new Menu(this);
