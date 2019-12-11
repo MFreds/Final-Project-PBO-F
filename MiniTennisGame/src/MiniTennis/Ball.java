@@ -11,8 +11,8 @@ public class Ball {
 	
 	int x = 0;
 	int y = 0;
-	int xa = 5;
-	int ya = 5;
+	int xa = 3;
+	int ya = 3;
 	private Game game;
 
 	public Ball(Game game) {
