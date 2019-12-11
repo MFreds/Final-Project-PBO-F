@@ -8,8 +8,8 @@ import java.awt.Rectangle;
 
 public class Menu {
 	
-	public Rectangle playButton = new Rectangle(280,250,100,50);
-	public Rectangle quitButton = new Rectangle(280,350,100,50);
+	public Rectangle playButton = new Rectangle(280,250,100,50); // play button
+	public Rectangle quitButton = new Rectangle(280,350,100,50); // quit button
 	private Game game;
 
 	public Menu(Game game) {
@@ -27,8 +27,8 @@ public class Menu {
 		Font fnt1 = new Font("arial", Font.BOLD, 30);
 		g.setFont(fnt1);
 		g.drawString("Play", playButton.x + 19, playButton.y + 30);
-		g2d.draw(playButton);
+		g2d.draw(playButton); // play button
 		g.drawString("Quit", quitButton.x + 19, quitButton.y + 30);
-		g2d.draw(quitButton); 
+		g2d.draw(quitButton); // quit button
 	}
 }

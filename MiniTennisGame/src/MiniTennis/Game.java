@@ -23,16 +23,14 @@ public class Game extends JPanel {
 	Racquet racquet = new Racquet(this);
 	int speed = 3;
 	int score = 0;
-	//private Menu menu;
 	
 	private Menu menu = new Menu(this);
 	
 	private int getScore() {
 		return score ;
-		//return speed - 1;
 	}
 
-	public static  enum STATE{
+	public static  enum STATE{ // Membuat 2 keadaan, yaitu menu dan game
 		MENU,GAME
 	};
 	
@@ -40,7 +38,6 @@ public class Game extends JPanel {
 	
 	public Game() {
 		this.addMouseListener(new MouseInput());
-		//if(State == STATE.GAME) {
 		addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -60,10 +57,10 @@ public class Game extends JPanel {
 		if(State == STATE.GAME) {
 			Sound.BACK.loop();
 		}
-		//}
+		
 	}
 	private void move() {
-		if(State == STATE.GAME) {
+		if(State == STATE.GAME) { // jika keadaan = game
 		ball.move();
 		racquet.move();
 	}

@@ -29,7 +29,7 @@ public class Ball {
 			ya = game.speed;
 		else if (y + ya > game.getHeight() - DIAMETER)
 			game.gameOver();
-		else if (collision()){
+		else if (collision()){ // jika kena raket
 			ya = -game.speed;
 			y = game.racquet.getTopY() - DIAMETER;
 			game.speed++;
@@ -44,7 +44,7 @@ public class Ball {
 	}
 
 	private boolean collision() {
-		return game.racquet.getBounds().intersects(getBounds());
+		return game.racquet.getBounds().intersects(getBounds()); // kalo kena raket, akan dipantulkan
 	}
 
 	public void paint(Graphics2D g) {
