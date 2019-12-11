@@ -2,9 +2,12 @@ package MiniTennis;
 
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class Ball {
 	private static final int DIAMETER = 30;
+	Image img = Toolkit.getDefaultToolkit().getImage("src/resources/ball1.png");
 	
 	int x = 0;
 	int y = 0;
@@ -45,7 +48,8 @@ public class Ball {
 	}
 
 	public void paint(Graphics2D g) {
-		g.fillOval(x, y, DIAMETER, DIAMETER);
+		//g.fillOval(x, y, DIAMETER, DIAMETER);
+		g.drawImage(img, x, y, null);
 	}
 
 	public Rectangle getBounds() {

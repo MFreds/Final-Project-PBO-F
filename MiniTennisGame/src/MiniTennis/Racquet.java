@@ -1,7 +1,9 @@
 package MiniTennis;
 
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
 public class Racquet {
@@ -10,6 +12,9 @@ public class Racquet {
 	private static final int HEIGHT = 10;
 	int x = 0;
 	int xa = 0;
+	
+	Image img = Toolkit.getDefaultToolkit().getImage("src/resources/papan.png");
+	
 	private Game game;
 
 	public Racquet(Game game) {
@@ -22,7 +27,8 @@ public class Racquet {
 	}
 
 	public void paint(Graphics2D g) {
-		g.fillRect(x, Y, WITH, HEIGHT);
+		//g.fillRect(x, Y, WITH, HEIGHT);
+		g.drawImage(img, x, Y, null);
 	}
 
 	public void keyReleased(KeyEvent e) {

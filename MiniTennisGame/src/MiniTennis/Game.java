@@ -7,20 +7,25 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class Game extends JPanel {
+	
+	Image img = Toolkit.getDefaultToolkit().getImage("src/resources/hh.jpg");
+	Image img1 = Toolkit.getDefaultToolkit().getImage("src/resources/bb.png");
 
 	Ball ball = new Ball(this);
 	Racquet racquet = new Racquet(this);
-	int speed = 2;
+	int speed = 3;
 	int score = 0;
 	//private Menu menu;
 	
-	private Menu menu = new Menu( this);
+	private Menu menu = new Menu(this);
 	
 	private int getScore() {
 		return score ;
@@ -62,12 +67,17 @@ public class Game extends JPanel {
 		ball.move();
 		racquet.move();
 	}
-}
+	}
+	
+	
 
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g); // supaya bolanya tetep jadi bola
 		Graphics2D g2d = (Graphics2D) g;
+		
+		g2d.drawImage(img1, 0, 0, null);
+		
 		if(State == STATE.GAME) {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON); // memperhalus bentuk bola
@@ -78,8 +88,11 @@ public class Game extends JPanel {
 		g2d.setFont(new Font("Verdana", Font.BOLD, 30));
 		g2d.drawString(String.valueOf(getScore()), 10, 30);
 		}
+		
 		else if(State == STATE.MENU) {
+			g2d.drawImage(img, 0, 0, null);
 			menu.render(g2d);
+			
 		}
 	}
 
@@ -97,8 +110,8 @@ public class Game extends JPanel {
 		
 		frame.add(game);
 		frame.setSize(700,800);
-		frame.setResizable(false);
 		frame.setVisible(true); // supaya windownya muncul
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // supaya programnya berhenti saat window ditutup
 
 		while (true) {
